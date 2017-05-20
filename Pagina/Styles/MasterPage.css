@@ -1,0 +1,226 @@
+/*PROPIEDADES GLOBALES*/
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+html { 
+    width: 100%; 
+    height:100%; 
+}
+
+body {
+	background:url('../pics/bg.jpg') no-repeat fixed;
+	background-size: 100% 160%, auto;
+}
+
+footer {
+    position:fixed;
+    padding:0.9%;
+    width:100%;
+    left:0px;
+    bottom:0px;
+    background:rgba(0, 0, 0, 0.87);
+    color:white;
+    text-align:center;
+}
+
+.modalBackground
+    {
+        background-color: Black;
+        filter: alpha(opacity=90);
+        opacity: 0.8;
+    }
+    .modalPopup
+    {
+        background-color: #FFFFFF;
+        border-width: 3px;
+        border-style: solid;
+        border-color: black;
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 300px;
+        height: 140px;
+    }
+
+/*MENU ESTATICO PRINCIPAL*/
+
+.navBar ul {
+    position:fixed;
+    width: 100%;
+    background:rgba(255, 255, 255, 1);
+    list-style: none;
+    overflow: hidden;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.56);
+}
+
+.navBar ul li{
+    float: left;
+    font-size: 14px;
+}
+
+.navBar ul li a:hover {
+    color: white;
+    background: rgba(0, 0, 0, 0.74);
+    transition: 0.5s;
+}
+
+.navBar ul li a{
+    display: block;
+    padding: 20px;
+    color: #000;
+    text-decoration: none;
+    align-content: center;
+}
+
+.navBar ul li img{
+    margin-top: 4px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+/*ESTO ES PARA GRIDVIEW*/
+
+.scrolling-table-container {
+    height: 378px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.tabContainer {
+    margin-top:7%;
+    margin-bottom:5%;
+    padding:1%;
+    background:rgba(0, 0, 0, 0.50);
+    box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.10);
+    height:90%;
+}
+
+table {
+    background: white;
+    border: 1px solid #c3c3c3;
+    border-radius: 5px;
+    width: 50%;
+    border-spacing: 0px;
+    border-collapse: separate;
+}
+
+table th {
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+    background: #c6c6c6;
+}
+
+table td {
+    background: transparent;
+}
+
+.mGrid {  
+    width:99%;
+    border: 1px solid black;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: #fff;   
+    border: solid 1px #525252;  
+    border-collapse: collapse;  
+}  
+  
+.mGrid td {  
+    padding: 2px;  
+    border: solid 1px #c1c1c1;  
+    color: #717171;  
+}  
+  
+.mGrid th {  
+    padding: 4px 2px;  
+    color: #fff;  
+    background: #424242 url(grd_head.png) repeat-x top;  
+    border-left: solid 1px #525252;  
+    font-size: 0.9em;  
+}  
+  
+.mGrid .alt {  
+    background: #fcfcfc url(grd_alt.png) repeat-x top;  
+}  
+  
+.mGrid .pgr {  
+    background: #424242 url(grd_pgr.png) repeat-x top;  
+}  
+  
+.mGrid .pgr table {  
+    margin: 5px 0;  
+}  
+  
+.mGrid .pgr td {  
+    border-width: 0;  
+    padding: 0 6px;  
+    border-left: solid 1px #666;  
+    font-weight: bold;  
+    color: #fff;  
+    line-height: 12px;  
+}  
+  
+.mGrid .pgr a {  
+    color: #666;  
+    text-decoration: none;  
+}  
+  
+.mGrid .pgr a:hover {  
+    color: #000;  
+    text-decoration: none;  
+}  
+
+/*AÑADIR ARTICULOS BONITOS*/
+
+.article article {
+    display: block;
+	background:rgba(24,8,33,.9);
+    float: left;
+	padding:40px;
+    margin-top: 35px;
+	margin-left: 35px;
+	color:#fff;
+	box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    max-width: 24%;
+}
+ 
+.article article h2 {
+	color:#fff;
+}
+ 
+.article article hr {
+	background:#F64740;
+	height:5px;
+	border:none;
+}
+ 
+.article article p {
+	line-height: 25px;
+}
+ 
+.article article h2, .article article p, .article article hr {
+	margin-bottom: 2%;
+}
+
+
+/*VARAS HARDCORE*/
+/* --- Clase que agregaremos cuando el usuario haga scroll --- */
+.menu-fixed {
+	position:fixed;
+	z-index:1000;
+	top:0;
+	/*max-width:1000px;*/
+	width:100%;
+	box-shadow:0px 4px 3px rgba(0,0,0,.5);
+}
+
