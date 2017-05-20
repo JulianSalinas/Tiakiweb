@@ -13,7 +13,7 @@ namespace Servicio
     public partial class Residenciales : Page
     {
 
-        private DefaultController ctrl = new DefaultController();
+        private ResidencialController ctrl = new ResidencialController();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,32 +22,51 @@ namespace Servicio
                 GridViewResidenciales.DataSource = ctrl.GetResidenciales();
                 GridViewResidenciales.DataBind();
             }
-           
         }
 
-        protected void btnAddResidencial_Click(object sender, EventArgs e)
+        protected void btnReg_ServerClick(object sender, EventArgs e)
+        {
+            txtIdResidencial.ReadOnly = false;
+            txtIdResidencial.Text = "";
+            txtNombreResidencial.Text = "";
+            txtDireccionResidencial.Text = "";
+            ScriptManager.RegisterStartupScript(this, GetType(), "Pop", "$('#popupResidencial').modal('show');", true);
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            RESIDENCIAL r = getSelectedItemfromButtom(sender);
+            txtIdResidencial.ReadOnly = true;
+            txtIdResidencial.Text = r.ID;
+            txtNombreResidencial.Text = r.NOMBRE;
+            txtDireccionResidencial.Text = r.DIRECCION;
+            ScriptManager.RegisterStartupScript(this, GetType(), "Pop", "$('#popupResidencial').modal('show');", true);
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            RESIDENCIAL r = getSelectedItemfromButtom(sender);
+            ctrl.EliminarResidencial(r);
+            ClientScript.RegisterStartupScript(GetType(), "myalert", "alert('Elemento eliminado: Residencial #" + r.ID + "');", true);
+            Response.Redirect("Residenciales.aspx");
+        }
+
+        protected void btnResidencial_Click(object sender, EventArgs e)
         {
             RESIDENCIAL obj = new RESIDENCIAL() {
-                ID = txtAddIdResidencial.Text,
-                NOMBRE = txtAddNombreResidencial.Text,
-                DIRECCION = txtAddDireccionResidencial.Text
+                ID = txtIdResidencial.Text,
+                NOMBRE = txtNombreResidencial.Text,
+                DIRECCION = txtDireccionResidencial.Text
             };
             ctrl.RegistrarResidencial(obj);
             Response.Redirect("Residenciales.aspx");
         }
 
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
+        protected RESIDENCIAL getSelectedItemfromButtom(object sender) {
             Button btn = (Button)sender;
             GridViewRow rowview = (GridViewRow)btn.NamingContainer;
-            string val = (string) GridViewResidenciales.DataKeys[rowview.RowIndex]["ID"];
-            ClientScript.RegisterStartupScript(GetType(), "myalert", "alert('Borrando+" + val+ "');", true);
-        }
-
-        protected void btnEdit_Click(object sender, EventArgs e)
-        {
-            txtAddDireccionResidencial.Text = "hola";
-            ScriptManager.RegisterStartupScript(this, GetType(), "Pop", "$('#popupResidencial').modal('show');", true);         
+            string val = (string)GridViewResidenciales.DataKeys[rowview.RowIndex]["ID"];
+            return ctrl.GetResidencial(val);
         }
 
     }

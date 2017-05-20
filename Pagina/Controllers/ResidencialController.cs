@@ -10,38 +10,21 @@ namespace Servicio.Controllers
     public class ResidencialController : BaseController
     {
 
-        /* *
-         * Obtiene los detalles de un residencial
-         * */
-
-        public RESIDENCIAL GetResidenciale(string ID)
+        public RESIDENCIAL GetResidencial(string ID)
         {
-          
             return (from r in linq.RESIDENCIAL
                     where r.ID == ID
                     select r).FirstOrDefault();
-
         }
-
-        /* *
-         * Obtiene todos los residenciales
-         * */
 
         public List<RESIDENCIAL> GetResidenciales()
         {
-
             return (from r in linq.RESIDENCIAL
                     select r).ToList();
-
         }
-
-        /* *
-         * Registrar un nuevo residencial, si ya existe lo actualiza
-         * */
 
         public void RegistrarResidencial(RESIDENCIAL obj)
         {
-
             var existente = (from cmp in linq.RESIDENCIAL
                              where obj.ID == cmp.ID
                              select cmp).FirstOrDefault();
@@ -58,26 +41,16 @@ namespace Servicio.Controllers
             linq.SubmitChanges();
         }
 
-        /* *
-         * Elimina un residencial segun su id
-         * */
-
-        public void EliminarResidencial(string id)
+        public void EliminarResidencial(RESIDENCIAL obj)
         {
-            RESIDENCIAL residencial = (
-                from r in linq.RESIDENCIAL
-                where r.ID == id
-                select r).FirstOrDefault();
-
             foreach (VIGILANTE vigilante in (
                 from v in linq.VIGILANTE
-                where v.RESIDENCIAL == residencial.ID
+                where v.RESIDENCIAL == obj.ID
                 select v).ToList())
             {
-
                 vigilante.RESIDENCIAL = null;
             }
-
+            linq.RESIDENCIAL.DeleteOnSubmit(obj);
             linq.SubmitChanges();
         }
 

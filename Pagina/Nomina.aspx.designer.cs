@@ -10,51 +10,33 @@
 namespace Servicio {
     
     
-    public partial class Residenciales {
+    public partial class Nomina {
         
         /// <summary>
-        /// Control btnReg.
+        /// Control btnReset.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnReg;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnReset;
         
         /// <summary>
-        /// Control GridViewResidenciales.
+        /// Control GridViewNomina.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewResidenciales;
+        protected global::System.Web.UI.WebControls.GridView GridViewNomina;
         
         /// <summary>
-        /// Control txtIdResidencial.
+        /// Control SqlDataSourceNomina.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdResidencial;
-        
-        /// <summary>
-        /// Control txtNombreResidencial.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreResidencial;
-        
-        /// <summary>
-        /// Control txtDireccionResidencial.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDireccionResidencial;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceNomina;
     }
 }
