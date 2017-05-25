@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Servicio
 {
-    public partial class Nomina : System.Web.UI.Page
+    public partial class Nomina : Page
     {
         private VigilanteController ctrl = new VigilanteController();
 

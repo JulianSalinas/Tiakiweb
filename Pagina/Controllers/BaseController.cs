@@ -10,5 +10,7 @@ namespace Servicio.Controllers
     public abstract class BaseController : ApiController
     {
         protected static LinqDataContext linq = new LinqDataContext();
+        public static int ACTUAL = 0;
+        public static int SIGUIENTE = 1;
     }
 }

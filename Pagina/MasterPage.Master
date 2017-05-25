@@ -31,6 +31,7 @@
         <li><a href="Vigilantes.aspx">Vigilantes</a></li>
         <li><a href="Nomina.aspx">Nómina</a></li>
         <li><a href="Turno.aspx">Turno</a></li>
+        <li><a href="Login.aspx">Salir</a></li>
     </ul></nav>
 
     <div class="container">
@@ -44,8 +45,6 @@
 
     </div>
 
-    <footer>
-        &copy; Copyright 2017, TIAKI
-    </footer>
+
 </body>
 </html>

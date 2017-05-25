@@ -12,8 +12,8 @@ html {
 }
 
 body {
-	background:url('../pics/bg.jpg') no-repeat fixed;
-	background-size: 100% 160%, auto;
+	background:url('../Pics/bg.jpg') no-repeat fixed;
+	background-size: 100% 130%, auto;
 }
 
 footer {
@@ -50,7 +50,7 @@ footer {
 .navBar ul {
     position:fixed;
     width: 100%;
-    background:rgba(255, 255, 255, 1);
+    background:white;
     list-style: none;
     overflow: hidden;
     box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.56);

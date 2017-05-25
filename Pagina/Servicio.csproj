@@ -121,13 +121,15 @@
     <Content Include="Residenciales.aspx" />
     <Content Include="Styles\Login.css" />
     <Content Include="Styles\MasterPage.css" />
+    <Content Include="Turno.aspx" />
     <Content Include="Vigilantes.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\Estado.cs" />
+    <Compile Include="Controllers\TurnoController.cs" />
     <Compile Include="Controllers\ResidencialController.cs" />
     <Compile Include="Controllers\VigilanteController.cs" />
     <Compile Include="Global.asax.cs">
@@ -166,6 +168,13 @@
     </Compile>
     <Compile Include="Residenciales.aspx.designer.cs">
       <DependentUpon>Residenciales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Turno.aspx.cs">
+      <DependentUpon>Turno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Turno.aspx.designer.cs">
+      <DependentUpon>Turno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vigilantes.aspx.cs">
       <DependentUpon>Vigilantes.aspx</DependentUpon>

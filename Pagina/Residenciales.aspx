@@ -10,7 +10,7 @@
         <asp:GridView runat="server" ID="GridViewResidenciales" DataKeyNames="ID" AutoGenerateColumns="False" BackColor ="White" CssClass="table" >
 
             <emptydatatemplate>
-                No hay residenciales que mostrar  
+                No hay nada que mostrar  
             </emptydatatemplate>           
 
             <Columns>
